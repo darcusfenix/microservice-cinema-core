@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Configuration = exports.ConnectionProvider = exports.getCommentModel = exports.getMovieModel = exports.CommentSchema = exports.MovieSchema = undefined;
 
-var _MovieFactory = require("factories/MovieFactory");
+var _MovieFactory = require("./factories/MovieFactory");
 
 Object.defineProperty(exports, "getMovieModel", {
   enumerable: true,
@@ -14,7 +14,7 @@ Object.defineProperty(exports, "getMovieModel", {
   }
 });
 
-var _CommentFactory = require("factories/CommentFactory");
+var _CommentFactory = require("./factories/CommentFactory");
 
 Object.defineProperty(exports, "getCommentModel", {
   enumerable: true,
@@ -23,7 +23,7 @@ Object.defineProperty(exports, "getCommentModel", {
   }
 });
 
-var _index = require("configuration/index");
+var _index = require("./configuration/index");
 
 Object.defineProperty(exports, "Configuration", {
   enumerable: true,
@@ -32,15 +32,15 @@ Object.defineProperty(exports, "Configuration", {
   }
 });
 
-var _MovieModel = require("models/MovieModel");
+var _MovieModel = require("./models/MovieModel");
 
 var _MovieModel2 = _interopRequireDefault(_MovieModel);
 
-var _CommentModel = require("models/CommentModel");
+var _CommentModel = require("./models/CommentModel");
 
 var _CommentModel2 = _interopRequireDefault(_CommentModel);
 
-var _connectionProvider = require("dataAccess/connectionProvider");
+var _connectionProvider = require("./dataAccess/connectionProvider");
 
 var _connectionProvider2 = _interopRequireDefault(_connectionProvider);
 
