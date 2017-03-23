@@ -1,2 +1,2 @@
-# microservice-movies-crud
-microservice for movies
+
+# microservice-cinema-models
