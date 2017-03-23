@@ -12,7 +12,7 @@ exports.default = function (url, database, options) {
 
     return new Promise(function (resolve, reject) {
 
-        var address = "mongodb://" + _index.serverSettings.mongodbUser + ":" + _index.serverSettings.mongodbPassword + "@" + _index.serverSettings.mongodbUrl + ":" + _index.serverSettings.mongodbPort + "/" + _index.serverSettings.mongodbDatabase;
+        var address = "mongodb://" + _index.settings.mongodbUser + ":" + _index.settings.mongodbPassword + "@" + _index.settings.mongodbUrl + ":" + _index.settings.mongodbPort + "/" + _index.settings.mongodbDatabase;
         log.debug("address to mongodb: ", address);
         if (!internalConnectionPool[address]) {
 

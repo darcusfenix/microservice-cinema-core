@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var serverSettings = exports.serverSettings = {
+var settings = exports.settings = {
     "nameServer": "localhost",
     "mongodbUrl": process.env.MONGODB_URL ? process.env.MONGODB_URL : "localhost",
     "mongodbDatabase": process.env.MONGODB_DATABASE ? process.env.MONGODB_DATABASE : "cinema",

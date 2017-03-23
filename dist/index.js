@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Configuration = exports.ConnectionProvider = exports.getCommentModel = exports.getMovieModel = exports.CommentSchema = exports.MovieSchema = undefined;
+exports.settings = exports.ConnectionProvider = exports.getCommentModel = exports.getMovieModel = exports.CommentSchema = exports.MovieSchema = undefined;
 
 var _MovieFactory = require("./factories/MovieFactory");
 
@@ -25,10 +25,10 @@ Object.defineProperty(exports, "getCommentModel", {
 
 var _index = require("./configuration/index");
 
-Object.defineProperty(exports, "Configuration", {
+Object.defineProperty(exports, "settings", {
   enumerable: true,
   get: function get() {
-    return _index.Configuration;
+    return _index.settings;
   }
 });
 

@@ -1,4 +1,4 @@
-export const serverSettings = {
+export const settings = {
     "nameServer": "localhost",
     "mongodbUrl": process.env.MONGODB_URL ? process.env.MONGODB_URL : "localhost",
     "mongodbDatabase": process.env.MONGODB_DATABASE ? process.env.MONGODB_DATABASE : "cinema",
