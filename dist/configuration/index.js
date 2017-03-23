@@ -12,9 +12,9 @@ var serverSettings = exports.serverSettings = {
     "mongodbPort": process.env.MONGODB_PORT ? process.env.MONGODB_PORT : 27017,
     "expressPort": process.env.EXPRESS_PORT ? process.env.EXPRESS_PORT : 3000,
     "cache": {
-        "mongodbPassword": "bfdf8aba8e784557af145db15f8703c1"
+        "password": "bfdf8aba8e784557af145db15f8703c1"
     },
     "session": {
-        "mongodbPassword": "1652f8dfa00443589e12afb7ec37f2c5"
+        "password": "1652f8dfa00443589e12afb7ec37f2c5"
     }
 };
