@@ -1,7 +1,7 @@
 import MovieModel from "../models/MovieModel";
 import connectionProvider from "../dataAccess/connectionProvider";
 
-export const getCommentModel = async function() {
+export const getMovieModel = async function() {
     try {
 
         const conn = await connectionProvider();
