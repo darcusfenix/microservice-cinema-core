@@ -1,5 +1,5 @@
 {
-  "name": "microservice-cinema-models",
+  "name": "microservice-cinema-core",
   "version": "1.0.0",
   "description": "microservice for movies",
   "main": "dist/index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darcusfenix/microservice-cinema-models.git"
+    "url": "git+https://git@github.com:darcusfenix/microservice-cinema-core.git"
   },
   "author": "Juan Crisóstomo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darcusfenix/microservice-cinema-models/issues"
+    "url": "https://github.com/darcusfenix/microservice-cinema-core/issues"
   },
-  "homepage": "https://github.com/darcusfenix/microservice-cinema-models#readme",
+  "homepage": "https://github.com/darcusfenix/microservice-cinema-core#readme",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.0",
