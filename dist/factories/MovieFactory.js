@@ -30,7 +30,7 @@ var getMovieModel = exports.getMovieModel = function () {
 
                     case 3:
                         conn = _context.sent;
-                        return _context.abrupt("return", conn.model("comment", _MovieModel2.default));
+                        return _context.abrupt("return", conn.model("movie", _MovieModel2.default));
 
                     case 7:
                         _context.prev = 7;

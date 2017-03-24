@@ -23,14 +23,11 @@ const Schema = mongoose.Schema,
             "type": Boolean,
             "default": true
         },
-        "movie": [
-            {
-                "type": Schema.Types.ObjectId,
-                "ref": "movie",
-                "required": true,
-            }
-        ]
-
+        "movie": {
+            "type": Schema.Types.ObjectId,
+            "ref": "movie",
+            "required": true,
+        }
     });
 
 export default commentSchema;

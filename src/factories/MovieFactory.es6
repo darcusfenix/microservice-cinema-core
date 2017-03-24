@@ -5,7 +5,7 @@ export const getMovieModel = async function() {
     try {
 
         const conn = await connectionProvider();
-        return conn.model("comment", MovieModel);
+        return conn.model("movie", MovieModel);
 
     } catch (err) {
 

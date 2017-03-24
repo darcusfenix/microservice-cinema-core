@@ -33,12 +33,11 @@ var Schema = _mongoose2.default.Schema,
         "type": Boolean,
         "default": true
     },
-    "movie": [{
+    "movie": {
         "type": Schema.Types.ObjectId,
         "ref": "movie",
         "required": true
-    }]
-
+    }
 });
 
 exports.default = commentSchema;
