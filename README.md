@@ -1,8 +1,12 @@
 
-# Microservices cinema core
+# Proyecto Cinema
+##### Este proyecto tiene como finalidad mostrar a grandes rasgos el resultado final de este curso. La imagen "microservices architecture" representa la conexión de cada uno de los componentes de este sistema que interactuan con el sistema.
 
 ![alt text](https://www.dropbox.com/s/p8bzdssqik2tw9m/microservice-cinema-architecture.png?dl=1 "microservices architecture")
 
+### Componentes del sistema
+* Balanceador de carga para servicios rest y la spa.
+* Contenedor corriendo una imagen docker de la spa.  
 
 ### Load Balance nginx
 ```
