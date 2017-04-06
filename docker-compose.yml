@@ -6,6 +6,8 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+    environment:
+      - MONGODB_DATABASE=cinema
 
   message-broker:
     image: darcusfenix/activemq:v1.0.0
@@ -29,7 +31,7 @@ services:
        - "3001:3000"
     environment:
        - MONGODB_URL=mongodb
-       - MONGODB_PORT=2717
+       - MONGODB_PORT=27017
        - MONGODB_DATABASE=cinema
        - EXPRESS_PORT=3000
     build: ../microservice-cinema-movies
@@ -43,7 +45,6 @@ services:
       environment:
          - MICRO_CINEMA_MOVIES_HOST=micro-cinema-movies
          - MICRO_CINEMA_MOVIES_PORT=3001
-      command: /bin/bash -c "nginx -g 'daemon off;'"
 
 #  api-movies:
  #     image: darcusfenix/micro-cinema-movies:v1.0.0
