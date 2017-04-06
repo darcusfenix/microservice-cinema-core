@@ -1,8 +1,17 @@
 
-# Microservices cinema core
+# Proyecto Cinema
+##### Este proyecto tiene como finalidad mostrar a grandes rasgos el resultado final de este curso. La imagen "microservices architecture" representa la conexión de cada uno de los componentes que interactuan con el sistema.
 
 ![alt text](https://www.dropbox.com/s/p8bzdssqik2tw9m/microservice-cinema-architecture.png?dl=1 "microservices architecture")
 
+### Componentes del sistema. MV (máquina virtual)
+
+* MV - Balanceador de carga para servicios rest y la spa.
+* MV - Contenedor corriendo una imagen docker de la spa.  
+* MV - Contenedor corriendo una imagen mongodb.
+* MV x2 - Cluster nativo de docker llamado (docker swarm). Dos nodos, manager y worker. Dos servicios docker-sarm para las API REST-FULL.
+* MV . Broker de mensajería y sus respectivo proxy para el websocket ssl. Esta mv expone el puerto para la conexión TCP con mqtt.
+* Tres nanegadores web. Una vez recibida la SPA conectan con el WWS y los servicios REST FULL
 
 ### Load Balance nginx
 ```
