@@ -1,0 +1,65 @@
+version: "2"
+
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  message-broker:
+    image: darcusfenix/activemq:v1.0.0
+    ports:
+      - "1883:1883"
+      - "61614:61614"
+
+  nginx-broker:
+    image: nginx
+    volumes:
+     - ./nginx-message-broker/nginx.conf:/etc/nginx/sites-available/default
+    ports:
+     - "8080:80"
+    environment:
+       - WEBSOCKET_HOST=message-broker
+       - WEBSOCKET_PORT=61614
+    command: /bin/bash -c "nginx -g 'daemon off;'"
+
+  micro-cinema-movies:
+    ports:
+       - "3001:3000"
+    environment:
+       - MONGODB_URL=mongodb
+       - MONGODB_PORT=2717
+       - MONGODB_DATABASE=cinema
+       - EXPRESS_PORT=3000
+    build: ../microservice-cinema-movies
+
+  nginx-services:
+      image: nginx
+      volumes:
+       - ./nginx-services/nginx.conf:/etc/nginx/sites-available/default
+      ports:
+       - "80:80"
+      environment:
+         - MICRO_CINEMA_MOVIES_HOST=micro-cinema-movies
+         - MICRO_CINEMA_MOVIES_PORT=3001
+      command: /bin/bash -c "nginx -g 'daemon off;'"
+
+#  api-movies:
+ #     image: darcusfenix/micro-cinema-movies:v1.0.0
+  #    ports:
+   #     - "3001:3000"
+    #  links:
+     #   - messageBroker
+
+#  api-comments:
+ #     image: darcusfenix/micro-cinema-comments:v1.0.0
+  #    ports:
+   #     - "3002:3000"
+    #  links:
+     #   - messageBroker
+
+#  mongodb-seed:
+ #   build: ./mongodb-sed
+  #  links:
+   # - mongodb
