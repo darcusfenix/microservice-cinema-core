@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.settings = exports.pushNotification = exports.ConnectionProvider = exports.getCommentModel = exports.getMovieModel = exports.CommentSchema = exports.MovieSchema = undefined;
+exports.settings = exports.sendNotificacion = exports.ConnectionProvider = exports.getCommentModel = exports.getMovieModel = exports.CommentSchema = exports.MovieSchema = undefined;
 
 var _MovieFactory = require("./factories/MovieFactory");
 
@@ -20,6 +20,15 @@ Object.defineProperty(exports, "getCommentModel", {
   enumerable: true,
   get: function get() {
     return _CommentFactory.getCommentModel;
+  }
+});
+
+var _mqtt = require("./pushNotifications/mqtt");
+
+Object.defineProperty(exports, "sendNotificacion", {
+  enumerable: true,
+  get: function get() {
+    return _mqtt.sendNotificacion;
   }
 });
 
@@ -44,13 +53,8 @@ var _connectionProvider = require("./dataAccess/connectionProvider");
 
 var _connectionProvider2 = _interopRequireDefault(_connectionProvider);
 
-var _mqtt = require("./pushNotifications/mqtt");
-
-var _mqtt2 = _interopRequireDefault(_mqtt);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.MovieSchema = _MovieModel2.default;
 exports.CommentSchema = _CommentModel2.default;
 exports.ConnectionProvider = _connectionProvider2.default;
-exports.pushNotification = _mqtt2.default;
