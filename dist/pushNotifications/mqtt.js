@@ -44,6 +44,7 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
 
     log.debug(_index2.default);
     log.debug({ "topic": topic, "message": message });
+    log.debug({ "url": url });
 
     return new Promise(function (resolve, reject) {
 
@@ -61,12 +62,6 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
                 client.end();
                 resolve(1);
             });
-        });
-
-        client.on("error", function (error) {
-
-            log.error(error);
-            reject(0);
         });
     });
 };
