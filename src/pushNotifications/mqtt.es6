@@ -7,6 +7,9 @@ let client;
 
 export const sendNotificacion = (topic, message = "") => {
 
+    console.log(config);
+    console.log({"topic": topic, "message": message});
+
     const {activemqUrl, activemqPort, activemqContext} = config;
     const url = `${activemqUrl}:${activemqPort}/${activemqContext}`;
 

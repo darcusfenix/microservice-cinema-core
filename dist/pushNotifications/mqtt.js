@@ -26,6 +26,11 @@ var client = void 0;
 
 var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topic) {
     var message = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
+
+    console.log(_index2.default);
+    console.log({ "topic": topic, "message": message });
+
     var activemqUrl = _index2.default.activemqUrl,
         activemqPort = _index2.default.activemqPort,
         activemqContext = _index2.default.activemqContext;
