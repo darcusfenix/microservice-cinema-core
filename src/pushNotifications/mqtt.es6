@@ -1,4 +1,4 @@
-import config from "../configuration/index";
+import {settings} from "../configuration/index";
 import mqtt from "mqtt";
 import log4js from "log4js";
 
@@ -7,19 +7,19 @@ let client;
 
 export const sendNotificacion = (topic, message = "") => {
 
-    console.log(config);
+    console.log(settings);
     console.log({"topic": topic, "message": message});
 
-    const {activemqUrl, activemqPort, activemqContext} = config;
+    const {activemqUrl, activemqPort, activemqContext} = settings;
     const url = `${activemqUrl}:${activemqPort}/${activemqContext}`;
 
-    if (typeof message === "object"){
+    if (typeof message === "object") {
 
         message = message.toString();
 
     }
 
-    log.debug(config);
+    log.debug(settings);
     log.debug({"topic": topic, "message": message});
     log.debug({"url": url});
 
@@ -44,7 +44,11 @@ export const sendNotificacion = (topic, message = "") => {
 
         });
 
+        client.on("error", () => {
 
+            reject(0);
+
+        });
 
     });
 

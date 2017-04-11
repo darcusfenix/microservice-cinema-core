@@ -9,8 +9,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _index = require("../configuration/index");
 
-var _index2 = _interopRequireDefault(_index);
-
 var _mqtt = require("mqtt");
 
 var _mqtt2 = _interopRequireDefault(_mqtt);
@@ -28,12 +26,12 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
     var message = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
 
-    console.log(_index2.default);
+    console.log(_index.settings);
     console.log({ "topic": topic, "message": message });
 
-    var activemqUrl = _index2.default.activemqUrl,
-        activemqPort = _index2.default.activemqPort,
-        activemqContext = _index2.default.activemqContext;
+    var activemqUrl = _index.settings.activemqUrl,
+        activemqPort = _index.settings.activemqPort,
+        activemqContext = _index.settings.activemqContext;
 
     var url = activemqUrl + ":" + activemqPort + "/" + activemqContext;
 
@@ -42,7 +40,7 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
         message = message.toString();
     }
 
-    log.debug(_index2.default);
+    log.debug(_index.settings);
     log.debug({ "topic": topic, "message": message });
     log.debug({ "url": url });
 
@@ -62,6 +60,11 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
                 client.end();
                 resolve(1);
             });
+        });
+
+        client.on("error", function () {
+
+            reject(0);
         });
     });
 };
