@@ -12,7 +12,7 @@ export default function (url, database, options) {
     }, options);
 
     return new Promise((resolve, reject) => {
-        const address = `mongodb://${settings.mongodbUser !== null ? settings.mongodbUser : ""}:${settings.mongodbPassword !== null ? settings.mongodbPassword + '@' : ""}${settings.mongodbUrl}:${settings.mongodbPort}/${settings.mongodbDatabase}`;
+        const address = `mongodb://${settings.mongodbUser !== null ? settings.mongodbUser : ""}${settings.mongodbPassword !== null ? settings.mongodbPassword + '@:' : ""}${settings.mongodbUrl}:${settings.mongodbPort}/${settings.mongodbDatabase}`;
         log.debug("address to mongodb: ", address);
         if (!internalConnectionPool[address]) {
 
