@@ -11,8 +11,7 @@ exports.default = function (url, database, options) {
     }, options);
 
     return new Promise(function (resolve, reject) {
-
-        var address = "mongodb://" + _index.settings.mongodbUser + ":" + _index.settings.mongodbPassword + "@" + _index.settings.mongodbUrl + ":" + _index.settings.mongodbPort + "/" + _index.settings.mongodbDatabase;
+        var address = "mongodb://" + (_index.settings.mongodbUser !== null ? _index.settings.mongodbUser : "") + ":" + (_index.settings.mongodbPassword !== null ? _index.settings.mongodbPassword + '@' : "") + _index.settings.mongodbUrl + ":" + _index.settings.mongodbPort + "/" + _index.settings.mongodbDatabase;
         log.debug("address to mongodb: ", address);
         if (!internalConnectionPool[address]) {
 
