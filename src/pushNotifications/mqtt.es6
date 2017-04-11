@@ -19,9 +19,7 @@ export const sendNotificacion = (topic, message = "") => {
 
     }
 
-    log.debug(settings);
-    log.debug({"topic": topic, "message": message});
-    log.debug({"url": url});
+    log.debug({"topic": topic, "message": message, "url": url});
 
     return new Promise((resolve, reject) => {
 

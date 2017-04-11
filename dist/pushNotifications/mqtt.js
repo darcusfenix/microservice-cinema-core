@@ -40,9 +40,7 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
         message = message.toString();
     }
 
-    log.debug(_index.settings);
-    log.debug({ "topic": topic, "message": message });
-    log.debug({ "url": url });
+    log.debug({ "topic": topic, "message": message, "url": url });
 
     return new Promise(function (resolve, reject) {
 
