@@ -50,18 +50,18 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
                 if (err) {
 
                     log.error(err);
-                    reject();
+                    reject(0);
                 }
 
                 client.end();
-                resolve();
+                resolve(1);
             });
         });
 
         client.on("error", function (error) {
 
             log.error(error);
-            reject();
+            reject(0);
         });
     });
 };
