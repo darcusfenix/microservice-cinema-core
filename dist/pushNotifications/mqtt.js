@@ -40,7 +40,7 @@ var sendNotificacion = exports.sendNotificacion = function sendNotificacion(topi
     log.debug(_index2.default);
     log.debug({ "topic": topic, "message": message });
 
-    new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
 
         client = _mqtt2.default.connect(url);
         client.on("connect", function () {

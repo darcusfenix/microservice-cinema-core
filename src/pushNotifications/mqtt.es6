@@ -19,7 +19,7 @@ export const sendNotificacion = (topic, message = "") => {
     log.debug(config);
     log.debug({"topic": topic, "message": message});
 
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
         client = mqtt.connect(url);
         client.on("connect", () => {
