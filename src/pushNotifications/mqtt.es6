@@ -21,6 +21,7 @@ export const sendNotificacion = (topic, message = "") => {
 
     log.debug(config);
     log.debug({"topic": topic, "message": message});
+    log.debug({"url": url});
 
     return new Promise((resolve, reject) => {
 
@@ -43,12 +44,7 @@ export const sendNotificacion = (topic, message = "") => {
 
         });
 
-        client.on("error", (error) => {
 
-            log.error(error);
-            reject(0);
-
-        });
 
     });
 
